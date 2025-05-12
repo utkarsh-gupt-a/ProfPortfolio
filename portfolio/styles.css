@@ -1,0 +1,548 @@
+/* Global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  width: 100%;
+  background-color: #f9f9f9; /* Optional: base color */
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo-img {
+  width: 40px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px; /* Space between logo and text */
+  border-radius: 50%; /* Optional: for circular logo */
+}
+
+.navbar {
+  width: 100%;
+  background-color: #0690cd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+  height: 7vh;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 100%;
+  gap: 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center; /* Vertically center menu items */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #047bb0;
+  border-radius: 5px;
+}
+.menu a.active{
+  background-color: #047bb0;
+  border-radius: 5px;
+}
+
+
+/* Dropdown Menu */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown Menu Styling */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 6px;
+  top: 100%;
+  left: 0;
+  background-color: white;  /* White background */
+  color: black;             /* Black text */
+  width: 180px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 10px 0;  /* Adds padding between the items */
+}
+
+.dropdown-content a {
+  display: block;          /* Make each item take a full line */
+  padding: 12px 20px;      /* Add padding around each item */
+  color: black;            /* Black text */
+  text-decoration: none;   /* Remove underlines */
+  font-size: 14px;         /* Adjust font size */
+  transition: background-color 0.3s ease;  /* Smooth transition for hover */
+}
+
+.dropdown-content a:hover {
+  background-color: #f96b39;  /* Orange highlight on hover */
+  color: white;                /* Change text to white on hover */
+  border-radius: 5px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .dropdown-content {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    padding: 12px 10px;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .dropdown-content {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    padding: 12px 10px;
+  }
+}
+
+/* Gallery */
+.gallery {
+  position: relative; /* Allows positioning of the arrows over the image */
+  background: #f4f4f4;
+  padding: 0; /* Remove padding to eliminate space */
+  margin-top: 0; /* Ensure no space above */
+  height: 50vh; /* Adjust this value depending on the height of your navbar */
+  width: 100vw;
+}
+.gallery-images {
+  width: 100%; /* Image occupies entire width of the screen */
+  height: 100%; /* Image fills the height of the gallery */
+}
+.gallery-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 123, 255, 0.7); /* Semi-transparent background */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1; /* Ensures arrows appear on top of the image */
+}
+.arrow.left {
+  left: 20px; /* Position the left arrow */
+}
+
+.arrow.right {
+  right: 20px; /* Position the right arrow */
+}
+
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Welcome Section */
+.welcome-section {
+  padding: 40px 0;
+}
+
+/* Flex Container for Hero Columns */
+.hero-columns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Image Column */
+.image-column {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-box {
+  position: relative;
+}
+
+.image-box img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Blue Overlay Box on the Image */
+
+.overlay-box {
+  position: absolute;
+  bottom: 20px;  /* Adjust as needed for spacing */
+  right: 20px;   /* Adjust as needed for spacing */
+  width: 150px;  /* Fixed width for square shape */
+  height: 150px; /* Fixed height for square shape */
+  background-color: #0690cd;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px; /* Optional: for rounded corners */
+}
+.overlay-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.overlay-box h3 {
+  font-size: 1rem;
+  margin-top: 0px;
+}
+
+
+/* Content Column */
+.content-column {
+  flex: 1;
+  padding: 20px;
+  align-self: flex-start; /* This will align this column to the top */
+}
+
+.content-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.content-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Discover More Button */
+.theme-btn.style-two {
+    background: #f96b39;
+    color: #fff;
+}
+.theme-btn {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20.5px 50px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 4px;
+    z-index: 1;
+    transition: all 500ms ease;
+}
+
+.theme-btn:hover {
+  background-color: #0690cd;
+}
+
+/* Research Cards */
+.sec-title .top-text {
+    position: relative;
+    font-size: 18px;
+    color: #0690cd;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.sec-title h1 {
+    position: relative;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 70px;
+    padding-bottom: 3px;
+    margin-bottom: 0px;
+}
+
+.sec-title {
+  text-align: center;
+  margin-bottom: 40px; /* optional spacing */
+}
+
+.top-text {
+  font-size: 18px;
+  color: #666; /* optional styling */
+  margin-bottom: 8px; /* space between top-text and h1 */
+}
+
+.sec-title h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.research {
+  background: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 20px;
+}
+.card h3 {
+  margin-top: 0;
+}
+
+/* General styles for the research cards */
+
+.sec-title h1:before {
+    position: absolute;
+    content: '';
+    background: #0690cd;
+    width: 55px;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+}
+.sec-title h1:after {
+    position: absolute;
+    content: '';
+    background: #f96b39;
+    width: 55px;
+    height: 2px;
+    left: 59px;
+    bottom: 0px;
+}
+.sec-title.text-center h1:before {
+    left: 50%;
+    transform: translateX(-155%);
+    margin-left: 29px;
+}
+.sec-title.text-center h1:after {
+    left: 50%;
+    transform: translateX(-45%);
+    margin-left: 29px;
+}
+
+
+.research-fields {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.research-fields .sec-title {
+    margin-bottom: 40px;
+}
+
+.research-fields .sec-title h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.research-fields .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.research-block {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.single-research-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-research-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.icon-box {
+  width: 80px;
+  height: 80px;
+  font-size: 3rem;
+  background-color: #f5f6fa; /* optional */
+  border-radius: 50%;        /* optional: for circle background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;       /* centers and adds spacing */
+}
+
+.icon-box i {
+  font-size: 36px;
+  color: #f96b39;
+}
+
+.single-research-box h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.single-research-box h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.single-research-box h3 a:hover {
+    color: #007bff;
+}
+
+.single-research-box .text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Fact Counter */
+.fact-container {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  background-color: #e3e3e3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.fact-box {
+  background-color: #0690cd;
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  min-height: 150px;
+}
+
+.fact-box h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.fact-box p {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+/* Adjust layout for different screen sizes */
+@media (max-width: 1200px) {
+    .research-block {
+        flex: 0 0 calc(50% - 20px); /* Two cards per row */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .research-block {
+        flex: 0 0 calc(100% - 20px); /* One card per row */
+        max-width: calc(100% - 20px);
+    }
+}

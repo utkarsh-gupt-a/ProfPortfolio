@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  background-color: #f9f9f9; /* Optional: base color */
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo-img {
+  width: 40px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px; /* Space between logo and text */
+  border-radius: 50%; /* Optional: for circular logo */
+}
+
+.navbar {
+  width: 100%;
+  background-color: #0690cd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+  height: 7vh;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 100%;
+  gap: 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center; /* Vertically center menu items */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #047bb0;
+  border-radius: 5px;
+}
+.menu a.active{
+  background-color: #047bb0;
+  border-radius: 5px;
+}
+
+
+/* Dropdown Menu */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown Menu Styling */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 6px;
+  top: 100%;
+  left: 0;
+  background-color: white;  /* White background */
+  color: black;             /* Black text */
+  width: 180px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 10px 0;  /* Adds padding between the items */
+}
+
+.dropdown-content a {
+  display: block;          /* Make each item take a full line */
+  padding: 12px 20px;      /* Add padding around each item */
+  color: black;            /* Black text */
+  text-decoration: none;   /* Remove underlines */
+  font-size: 14px;         /* Adjust font size */
+  transition: background-color 0.3s ease;  /* Smooth transition for hover */
+}
+
+.dropdown-content a:hover {
+  background-color: #f96b39;  /* Orange highlight on hover */
+  color: white;                /* Change text to white on hover */
+  border-radius: 5px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .dropdown-content {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    padding: 12px 10px;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .dropdown-content {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown-content a {
+    padding: 12px 10px;
+  }
+}
+
+/* Styling for the image below the navbar */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding: 0;            /* Remove any default padding/margin */
+    margin: 0;             /* Remove any default margin */
+}
+
+.below-navbar-image {
+    width: 100%;           /* Ensure the image takes up the full container width */
+    height: auto;          /* Keep the aspect ratio intact */
+    display: block; 
+    margin: 0;       /* Remove any inline-block or extra spacing */
+}
+.overlay {
+    position: absolute;  /* Position it relative to the image container */
+    top: 50%;            /* Centers the div vertically */
+    left: 50%;           /* Centers the div horizontally */
+    transform: translate(-50%, -50%);  /* Adjusts position to be perfectly centered */
+    background: #0691cd1f; /* Semi-transparent black background */
+    backdrop-filter: blur(10px); /* Blurry background effect */
+    padding: 40px 60px;  /* Padding around the text */
+    border-radius: 8px;  /* Optional: rounded corners for the div */
+    width: auto;         /* You can specify a fixed width if needed */
+}
+
+.overlay-text {
+    font-size: 48px;      /* Text size */
+    color: white;         /* White text */
+    font-weight: bold;    /* Optional: Make the text bold */
+    text-align: center;   /* Centers the text inside the div */
+}
+
+/* Styling for the image below the navbar */
+.image-container {
+  position: relative;
+  width: 100%;
+  padding: 0; /* Remove any default padding/margin */
+  margin: 0;  /* Remove any default margin */
+}
+
+/* For the image below the navbar */
+.below-navbar-image {
+  width: 100%;           /* Ensure the image takes up the full container width */
+  height: auto;          /* Keep the aspect ratio intact */
+  display: block;        /* Remove any inline-block or extra spacing */
+  margin: 0;             /* Remove any margin around the image */
+}
+
+/* Space between the About Me image and the new images */
+.about-photo-section {
+  display: flex;                  /* Use flexbox for layout */
+  flex-wrap: wrap;                 /* Allow wrapping of items on small screens */
+  justify-content: space-between;  /* Space between the images */
+  gap: 20px;                       /* Adds a gap between the images */
+  padding: 0 20px;                 /* Adds padding on the left and right edges of the screen */
+  box-sizing: border-box;          /* Ensures padding doesn't affect the width */
+  margin-top: 30px;                /* Adds space between the About Me image and the new images */
+}
+
+.about-photo {
+  width: calc(50% - 10px); /* Each image takes 50% of the container width minus the gap */
+  height: auto;            /* Keeps the aspect ratio of the images */
+  object-fit: cover;       /* Ensures the images are properly resized */
+  border-radius: 10px;     /* Optional: adds rounded corners to the images */
+}
+
+@media (max-width: 768px) {
+  .about-photo {
+    width: 100%;  /* Stack images on top of each other on small screens */
+    margin-bottom: 20px;  /* Adds space between images when stacked */
+  }
+}
+
