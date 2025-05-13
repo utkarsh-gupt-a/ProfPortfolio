@@ -196,10 +196,10 @@ body {
     top: 50%;            /* Centers the div vertically */
     left: 50%;           /* Centers the div horizontally */
     transform: translate(-50%, -50%);  /* Adjusts position to be perfectly centered */
-    background: #0691cd1f; /* Semi-transparent black background */
+    background: #81c5e31f; /* Semi-transparent black background */
     backdrop-filter: blur(10px); /* Blurry background effect */
-    padding: 40px 60px;  /* Padding around the text */
-    border-radius: 8px;  /* Optional: rounded corners for the div */
+    padding: 20px 60px;  /* Padding around the text */
+    border-radius: 16px;  /* Optional: rounded corners for the div */
     width: auto;         /* You can specify a fixed width if needed */
 }
 
@@ -252,73 +252,157 @@ body {
   }
 } */
 
-.timeline-container {
-  padding: 40px 20px;
-  position: relative;
-}
 
-.timeline-row {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700");
 
-.timeline-event {
-  flex: 1 1 22%;
-  min-width: 250px;
-  margin: 20px 10px;
-  position: relative;
-  text-align: center;
-}
-
-.timeline-event .circle {
-  width: 16px;
-  height: 16px;
-  background-color: #f96b39;
-  border-radius: 50%;
-  margin: 0 auto 15px;
-  position: relative;
-  z-index: 2;
-}
-
-.timeline-event .content {
-  background: #fff;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.timeline-event .date {
+body {
   font-size: 14px;
-  color: #0690cd;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
-/* Horizontal line */
-.timeline-row::before {
-  content: "";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0em;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  margin-top: 0em;
+}
+
+.container {
+  max-width: 1024px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  padding: 3em 2em 2em;
+  position: relative;
+  color: rgba(0, 0, 0, 0.7);
+  border-left: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.timeline-item p {
+  font-size: 1rem;
+}
+
+.timeline-item::before {
+  content: attr(date-is);
   position: absolute;
-  top: 8px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #ddd;
-  z-index: 1;
+  left: 2em;
+  text-decoration: underline;
+  font-weight: bold;
+  top: 1em;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.785rem;
 }
 
-/* Responsive spacing */
-@media (max-width: 992px) {
-  .timeline-event {
-    flex: 1 1 45%;
-  }
+.timeline-item::after {
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: 1em;
+  position: absolute;
+  left: -7px;
+  border-radius: 10px;
+  content: "";
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background: white;
 }
 
-@media (max-width: 576px) {
-  .timeline-event {
-    flex: 1 1 100%;
-  }
+.timeline-item:last-child {
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.container > h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  text-decoration: underline;
+  margin-bottom: 0em;
+}
+
+.fading-separator {
+  height: 1.5px;
+  width: 100%;
+  margin: 40px 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+}
+.more-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.center-box {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  text-align: center;
+  max-width: 80%;
+  width: 80%;
+}
+.more-details-about{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px;
+}
+.center-box-about{
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  text-align: center;
+  max-width: 80%;
+  width: 80%;
+}
+.center-box-about p{
+  font-size: 0.9rem;
+}
+.about-text {
+  list-style-type: disc;
+  text-align: left;
+  padding-left: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+.centered-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.details-list {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+  padding-left: 20px;
+  margin: 0;
 }
