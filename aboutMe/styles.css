@@ -227,27 +227,98 @@ body {
 }
 
 /* Space between the About Me image and the new images */
-.about-photo-section {
-  display: flex;                  /* Use flexbox for layout */
-  flex-wrap: wrap;                 /* Allow wrapping of items on small screens */
-  justify-content: space-between;  /* Space between the images */
-  gap: 20px;                       /* Adds a gap between the images */
-  padding: 0 20px;                 /* Adds padding on the left and right edges of the screen */
-  box-sizing: border-box;          /* Ensures padding doesn't affect the width */
-  margin-top: 30px;                /* Adds space between the About Me image and the new images */
+/* .about-photo-section {
+  display: flex;                  
+  flex-wrap: wrap;                 
+  justify-content: space-between;  
+  gap: 20px;                      
+  padding: 0 20px;                
+  box-sizing: border-box;         
+  margin-top: 30px;       
+  width: 80vw;      
 }
 
 .about-photo {
-  width: calc(50% - 10px); /* Each image takes 50% of the container width minus the gap */
-  height: auto;            /* Keeps the aspect ratio of the images */
-  object-fit: cover;       /* Ensures the images are properly resized */
-  border-radius: 10px;     /* Optional: adds rounded corners to the images */
+  width: calc(50% - 10px); 
+  height: 150px;
+  object-fit: cover;       
+  border-radius: 10px;     
 }
 
 @media (max-width: 768px) {
   .about-photo {
-    width: 100%;  /* Stack images on top of each other on small screens */
-    margin-bottom: 20px;  /* Adds space between images when stacked */
+    width: 100%; 
+    margin-bottom: 20px;  
+  }
+} */
+
+.timeline-container {
+  padding: 40px 20px;
+  position: relative;
+}
+
+.timeline-row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.timeline-event {
+  flex: 1 1 22%;
+  min-width: 250px;
+  margin: 20px 10px;
+  position: relative;
+  text-align: center;
+}
+
+.timeline-event .circle {
+  width: 16px;
+  height: 16px;
+  background-color: #f96b39;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-event .content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.timeline-event .date {
+  font-size: 14px;
+  color: #0690cd;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Horizontal line */
+.timeline-row::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ddd;
+  z-index: 1;
+}
+
+/* Responsive spacing */
+@media (max-width: 992px) {
+  .timeline-event {
+    flex: 1 1 45%;
   }
 }
 
+@media (max-width: 576px) {
+  .timeline-event {
+    flex: 1 1 100%;
+  }
+}
