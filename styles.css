@@ -291,6 +291,17 @@ body {
   background-color: #0690cd;
 }
 
+.fading-separator {
+  height: 1.5px;
+  width: 100%;
+  margin: 40px 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+}
 /* Container and section styling */
 .research-fields {
     padding: 50px 0;
@@ -346,7 +357,7 @@ body {
     overflow: hidden;
     text-align: center;
     padding: 20px;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column; /* Stack children vertically */
     flex-grow: 1;           /* Grow to fill height of .research-block */
@@ -390,7 +401,7 @@ body {
 }
 
 .single-research-box h3 a:hover {
-    color: #007bff;
+    color: #047dd9;
 }
 
 /* Text */
@@ -412,18 +423,19 @@ body {
   gap: 10px;
   box-sizing: border-box;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .fact-box {
   background-color: #0690cd;
   padding: 30px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
-  min-height: 150px;
+  min-height: 60px;
 }
 
 .fact-box h1 {
