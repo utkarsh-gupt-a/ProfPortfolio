@@ -265,6 +265,7 @@ p {
 
 .timeline-item p {
   font-size: 1rem;
+  padding: 0 20px 20px 20px;
 }
 
 .timeline-item::before {
@@ -277,7 +278,7 @@ p {
   display: block;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  font-size: 0.785rem;
+  font-size: 0.9rem;
 }
 
 .timeline-item::after {
@@ -319,20 +320,34 @@ p {
 .flex-wrapper {
   display: flex;
   justify-content: center;
-  gap: 2rem; /* space between the two */
-  max-width: 1024px;
+  gap: 2rem;
+  max-width: 80rem;
   margin: 2rem auto;
   width: 90%;
 }
 
+
 .flex-wrapper > .container {
-  flex: 1 1 50%;
+  flex: 1 1 50%; /* take up 50% each */
   box-sizing: border-box;
-  padding: 1.5rem 10rem;
-  background-color: #e3e4e6;
+  padding: 1.5rem 2rem;
+  background-color: #e3e4e6; /* soft background */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(6, 144, 205, 0.15);
   border-left: none;
-  border-radius: 30px;
 }
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 768px) {
+  .flex-wrapper {
+    flex-direction: column;
+  }
+  .flex-wrapper > .container {
+    flex: 1 1 100%;
+  }
+}
+
+
 .more-details {
   display: flex;
   flex-direction: column;
