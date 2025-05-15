@@ -164,41 +164,6 @@
 
 
     <script src="scripts.js"></script>
-    <script>
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-
-    const countUp = (counter) => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
-      const increment = Math.ceil(target / speed);
-
-      const update = () => {
-        const current = +counter.innerText;
-        if (current < target) {
-          counter.innerText = current + increment;
-          setTimeout(update, 25);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      update();
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counter = entry.target;
-          countUp(counter);
-          observer.unobserve(counter); // run only once
-        }
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => {
-      observer.observe(counter);
-    });
-  </script>
-
+    
 </body>
 </html>

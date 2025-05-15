@@ -196,31 +196,8 @@ body {
   margin: 0;             /* Remove any margin around the image */
 }
 
-/* Space between the About Me image and the new images */
-/* .about-photo-section {
-  display: flex;                  
-  flex-wrap: wrap;                 
-  justify-content: space-between;  
-  gap: 20px;                      
-  padding: 0 20px;                
-  box-sizing: border-box;         
-  margin-top: 30px;       
-  width: 80vw;      
-}
 
-.about-photo {
-  width: calc(50% - 10px); 
-  height: 150px;
-  object-fit: cover;       
-  border-radius: 10px;     
-}
 
-@media (max-width: 768px) {
-  .about-photo {
-    width: 100%; 
-    margin-bottom: 20px;  
-  }
-} */
 
 
 @import url("https://fonts.googleapis.com/css?family=Oswald|Roboto:400,700");
@@ -347,7 +324,6 @@ p {
   }
 }
 
-
 .more-details {
   display: flex;
   flex-direction: column;
@@ -393,11 +369,13 @@ p {
 }
 
 .centered-heading {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: bold;
   font-family: 'Georgia', serif;
   text-decoration: underline;
-  margin-bottom: 20px;
+  margin: 30px 0px 5px 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .details-list {

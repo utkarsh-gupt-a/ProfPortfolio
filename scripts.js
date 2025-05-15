@@ -1,33 +1,89 @@
-function discoverMore() {
-    window.location.href = "more-info.html";
-}
 document.addEventListener("DOMContentLoaded", function () {
-  // Gallery Image Carousel Functionality
-  const images = ["gallery/image1.jpg", "gallery/image2.jpg", "gallery/image3.jpg", "gallery/image4.jpg", "gallery/image5.jpg"]; // Replace with your image paths
+  // ----------- COUNTER ANIMATION -----------
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
+
+  const countUp = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const increment = Math.ceil(target / speed);
+
+    const update = () => {
+      const current = +counter.innerText;
+      if (current < target) {
+        counter.innerText = current + increment;
+        setTimeout(update, 25);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    update();
+  };
+
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countUp(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => {
+    counterObserver.observe(counter);
+  });
+
+  // ----------- OVERLAY BOX FADE & SLIDE-IN -----------
+  const overlayBox = document.querySelector('.overlay-box');
+  if (overlayBox) {
+    const overlayObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    overlayObserver.observe(overlayBox);
+  }
+
+  // ----------- GALLERY IMAGE CAROUSEL -----------
+  const images = [
+    "gallery/image1.jpg",
+    "gallery/image2.jpg",
+    "gallery/image3.jpg",
+    "gallery/image4.jpg",
+    "gallery/image5.jpg"
+  ];
   let currentIndex = 0;
   const galleryImg = document.getElementById("gallery-img");
 
-  // Function to update the gallery image
   function updateImage() {
-    galleryImg.src = images[currentIndex];
+    if (galleryImg) {
+      galleryImg.src = images[currentIndex];
+    }
   }
 
-  // Event listener for left arrow button
-  document.querySelector(".arrow.left").addEventListener("click", function () {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImage();
-  });
+  const leftArrow = document.querySelector(".arrow.left");
+  const rightArrow = document.querySelector(".arrow.right");
 
-  // Event listener for right arrow button
-  document.querySelector(".arrow.right").addEventListener("click", function () {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImage();
-  });
+  if (leftArrow && rightArrow) {
+    leftArrow.addEventListener("click", function () {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateImage();
+    });
 
-  // Optional: Handling the Discover More button click event
-  document.getElementById("discover-btn").addEventListener("click", function () {
-    alert("More details coming soon!");
-  });
+    rightArrow.addEventListener("click", function () {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateImage();
+    });
+  }
+
+  // ----------- DISCOVER MORE BUTTON -----------
+  const discoverBtn = document.getElementById("discover-btn");
+  if (discoverBtn) {
+    discoverBtn.addEventListener("click", function () {
+      window.location.href = "more-info.html"; // Or alert if placeholder
+      // alert("More details coming soon!");
+    });
+  }
 });
-
-
