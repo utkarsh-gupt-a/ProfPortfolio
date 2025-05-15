@@ -6,24 +6,15 @@ body {
   width: 100%;
   background-color: #f9f9f9; /* Optional: base color */
 }
-
 /* Logo Styling */
 .logo {
   display: flex;
   align-items: center;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: white;
   text-decoration: none;
   letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.logo-img {
-  width: 40px; /* Adjust size as needed */
-  height: auto;
-  margin-right: 10px; /* Space between logo and text */
-  border-radius: 50%; /* Optional: for circular logo */
 }
 
 .navbar {
@@ -38,7 +29,7 @@ body {
 
 .navbar-container {
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -60,14 +51,19 @@ body {
 .menu li {
   position: relative;
 }
+.menu li:last-child {
+  margin-right: 15px;
+}
+
 
 .menu a {
   text-decoration: none;
   color: white;
   font-size: 15px;
   font-weight: 600;
-  padding: 10px 15px;
+  padding: 10px 30px;
   transition: background-color 0.3s ease, padding 0.3s ease;
+  margin: 0 10px;
 }
 
 .menu a:hover {
@@ -150,34 +146,6 @@ body {
 }
 
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .logo {
-    font-size: 18px;
-  }
-
-  .navbar-container {
-    justify-content: space-between;
-  }
-
-  .dropdown-content {
-    position: relative;
-    width: 100%;
-    box-shadow: none;
-  }
-
-  .dropdown-content a {
-    padding: 12px 10px;
-  }
-}
-
 /* Gallery */
 .gallery {
   position: relative; /* Allows positioning of the arrows over the image */
@@ -257,8 +225,8 @@ body {
 
 .overlay-box {
   position: absolute;
-  bottom: 20px;  /* Adjust as needed for spacing */
-  right: 20px;   /* Adjust as needed for spacing */
+  bottom: 5px;  /* Adjust as needed for spacing */
+  right: 5px;   /* Adjust as needed for spacing */
   width: 150px;  /* Fixed width for square shape */
   height: 150px; /* Fixed height for square shape */
   background-color: #0690cd;
@@ -270,6 +238,8 @@ body {
   text-align: center;
   padding: 10px;
   border-radius: 5px; /* Optional: for rounded corners */
+  box-shadow: 4px 4px 10px 4px rgba(255, 255, 255, 0.4);
+
 }
 .overlay-box h1 {
   font-size: 2.5rem;
@@ -321,127 +291,54 @@ body {
   background-color: #0690cd;
 }
 
-/* Research Cards */
-.sec-title .top-text {
-    position: relative;
-    font-size: 18px;
-    color: #0690cd;
-    line-height: 30px;
-    margin-bottom: 12px;
-}
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-.sec-title h1 {
-    position: relative;
-    font-size: 68px;
-    font-weight: 700;
-    line-height: 70px;
-    padding-bottom: 3px;
-    margin-bottom: 0px;
-}
-
-.sec-title {
-  text-align: center;
-  margin-bottom: 40px; /* optional spacing */
-}
-
-.top-text {
-  font-size: 18px;
-  color: #666; /* optional styling */
-  margin-bottom: 8px; /* space between top-text and h1 */
-}
-
-.sec-title h1 {
-  font-size: 32px;
-  margin: 0;
-}
-
-.research {
-  background: #f9f9f9;
-  padding: 40px 20px;
-  text-align: center;
-}
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.card {
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  width: 300px;
-  padding: 20px;
-}
-.card h3 {
-  margin-top: 0;
-}
-
-/* General styles for the research cards */
-
-.sec-title h1:before {
-    position: absolute;
-    content: '';
-    background: #0690cd;
-    width: 55px;
-    height: 2px;
-    left: 0px;
-    bottom: 0px;
-}
-.sec-title h1:after {
-    position: absolute;
-    content: '';
-    background: #f96b39;
-    width: 55px;
-    height: 2px;
-    left: 59px;
-    bottom: 0px;
-}
-.sec-title.text-center h1:before {
-    left: 50%;
-    transform: translateX(-155%);
-    margin-left: 29px;
-}
-.sec-title.text-center h1:after {
-    left: 50%;
-    transform: translateX(-45%);
-    margin-left: 29px;
-}
-
-
+/* Container and section styling */
 .research-fields {
     padding: 50px 0;
     background-color: #f9f9f9;
 }
 
-.research-fields .sec-title {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section title */
+.sec-title.text-center {
+    text-align: center;
     margin-bottom: 40px;
 }
 
-.research-fields .sec-title h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-top: 10px;
+.top-text {
+    font-size: 18px;
+    color: #0690cd;
+    line-height: 30px;
+    margin-bottom: 12px;
 }
 
-.research-fields .row {
+.sec-title h1 {
+    font-size: 32px;
+    margin: 0;
+    position: relative;
+    font-weight: 700;
+}
+
+/* Equal height columns setup */
+.row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
+/* Bootstrap-like responsive columns with box-sizing */
 .research-block {
     flex: 0 0 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
     box-sizing: border-box;
+    display: flex; /* Make this flex container */
 }
 
+/* Make the card fill the parent flex container fully */
 .single-research-box {
     background: #fff;
     border-radius: 8px;
@@ -449,32 +346,37 @@ body {
     overflow: hidden;
     text-align: center;
     padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    flex-grow: 1;           /* Grow to fill height of .research-block */
 }
 
+/* Hover effect */
 .single-research-box:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-
+/* Icon box styling */
 .icon-box {
-  width: 80px;
-  height: 80px;
-  font-size: 3rem;
-  background-color: #f5f6fa; /* optional */
-  border-radius: 50%;        /* optional: for circle background */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px;       /* centers and adds spacing */
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+    background-color: #f5f6fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
 }
 
 .icon-box i {
-  font-size: 36px;
-  color: #f96b39;
+    font-size: 36px;
+    color: #f96b39;
 }
 
+/* Headings */
 .single-research-box h3 {
     font-size: 1.5rem;
     color: #333;
@@ -488,13 +390,15 @@ body {
 }
 
 .single-research-box h3 a:hover {
-    color: #0690cd;
+    color: #007bff;
 }
 
+/* Text */
 .single-research-box .text {
     font-size: 1rem;
     color: #666;
     line-height: 1.6;
+    flex-grow: 1; /* Make text container grow to fill remaining space */
 }
 
 /* Fact Counter */

@@ -3,26 +3,20 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   width: 100%;
-  background-color: #f9f9f9; /* Optional: base color */
+  background-color: #f9f9f9;
+    box-sizing: border-box;
+
 }
 
 /* Logo Styling */
 .logo {
   display: flex;
   align-items: center;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: white;
   text-decoration: none;
   letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.logo-img {
-  width: 40px; /* Adjust size as needed */
-  height: auto;
-  margin-right: 10px; /* Space between logo and text */
-  border-radius: 50%; /* Optional: for circular logo */
 }
 
 .navbar {
@@ -37,7 +31,7 @@ body {
 
 .navbar-container {
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -59,14 +53,19 @@ body {
 .menu li {
   position: relative;
 }
+.menu li:last-child {
+  margin-right: 15px;
+}
+
 
 .menu a {
   text-decoration: none;
   color: white;
   font-size: 15px;
   font-weight: 600;
-  padding: 10px 15px;
+  padding: 10px 30px;
   transition: background-color 0.3s ease, padding 0.3s ease;
+  margin: 0 10px;
 }
 
 .menu a:hover {
@@ -117,35 +116,6 @@ body {
   background-color: #f96b39;  /* Orange highlight on hover */
   color: white;                /* Change text to white on hover */
   border-radius: 5px;
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .logo {
-    font-size: 18px;
-  }
-
-  .navbar-container {
-    justify-content: space-between;
-  }
-
-  .dropdown-content {
-    position: relative;
-    width: 100%;
-    box-shadow: none;
-  }
-
-  .dropdown-content a {
-    padding: 12px 10px;
-  }
 }
 
 
@@ -328,7 +298,7 @@ p {
 }
 
 .container > h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   font-family: 'Georgia', serif;
   text-decoration: underline;
@@ -345,6 +315,23 @@ p {
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0)
   );
+}
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* space between the two */
+  max-width: 1024px;
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.flex-wrapper > .container {
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  padding: 1.5rem 10rem;
+  background-color: #e3e4e6;
+  border-left: none;
+  border-radius: 30px;
 }
 .more-details {
   display: flex;
